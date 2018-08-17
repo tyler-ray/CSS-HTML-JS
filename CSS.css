@@ -5,18 +5,26 @@
 #box-model{
 margin:5px;
 /* Spacing outside the bounding box */
+/* 24C */
 border:1px solid red;
 /* Borderbox /bounding box */
+/* 24D */
 padding:5px;
 /* spacing inside the bounding box */
-content:''
+/* 24E */
+content:'';
 /* content normally in HTML unless in pseudo selectors */
+box-sizing:border-box;
+/* 24F */
+/* makes all the math based on the border rather than a weird combination of everything. */
 }
 
 #Float-and-display{
     float:none;
+    /* 25D */
     /* also can be left/right, makes it so the rest of the content will fill around it. */
     display:inline;
+    /* 25F */
     /* inline is just like regular HTML layout*/
     /* block and inline block make it so that the element no longer takes up the full width of the screen */
     /* grid is awesome and allows grid functionalities for placement without pain */
@@ -28,13 +36,20 @@ content:''
     font-family: 'Courier New', Courier, monospace;
     /* Which font will be applied */
     font-size: 200%;
+    /* 23D-3 */
     /* size of font  */
     color:red;
+    /* 23D-2 */
     /* color of the font */
+    font-weight: bold;
+    /* 23D-1 */
+    /* Controlls the weight of the font, bold, thin etc. */
     background-color:blue;
     /* color of the background */
+    /* 23E */
     background-image:url('www.example.com/image.jpg');
     /* image background */
+    /* 23F */
     background-position: center;
     /* Position of the background image, conver is also common,*/
     background-repeat: no-repeat;
@@ -48,6 +63,12 @@ content:''
     /* absolute does not keep its place on the page and allows it to move. */
     /* fixed will keep its spot relative to the viewport */
     /* sticky is a mixtyre of fixed and static. based on input will act static unitl a cetain spot, then change to fixed, then back to static based on the position of the scroll box */
+    position:relative;
+    /* 25C-1 */
+    position:fixed;
+    /* 25C-3 */
+    position: absolute;
+    /* 25C-2 */
 }
 
 /* Selectors: */
@@ -59,13 +80,29 @@ span{}
 main{}
 body{}
 *{}
+div p{
+    /* any child p within div */
+    /* 22C-3 */
+}
+div>p{
+    /* any direct p child of div */
+    /* 22C-4 */
+}
+div+p{
+    /* any p tag directly next to a div */
+    /* 22C-5 */
+}
 .classes{}
+/* 22C-2 */
 #ids{}
+/* 22C-1 */
 /* selectors are defined in HTML as tags, classes or IDs to become selectors in CSS */
 
 @keyframes selector{
+    /* 28C */
     from{
         /* starting point / style */
+  
     }
     to{
         /* finishing poitn / style */
@@ -90,12 +127,24 @@ body{}
 /* defines points in the animation */
 }
 
+div:hover{
+    transition: width 2s;
+    /* 28D */
+    width:200px;
+    transform: rotate(20deg);
+    /* 28E */
+    /* this element will rotate 20 degrees and grow/shrink to 200px over two seconds */
+}
+
 #fancy-effects{
     box-shadow:3px 2px 5px;
+    /* 30C */
     /* adds a shadow on the box based on the input */
     background-image:linear-gradient(direction, starting-color, ending-color);
+    /* 30D */
     /* linear-gradient/radial-gradient overlays a gradient over the image */
     overflow:hidden;
+    /* 30E */
     /* hides extra content that does not fit inside the given element usually div or span */
     word-wrap: break-word
     /* breaks words that are too long can also be keep-all will break at predefined hyphens, or break-all will break at any character */   
@@ -103,31 +152,39 @@ body{}
 
 #flex-wrapper{
     display:flex;
+    /* 27G */
     /* changes display for flexbox to work */
     flex-direction:row;
+    /* 27F */
     /* changes between row and column. default is row */
     justify-content: center;
+    /* 27C */
     /* changes the style of flex inline with the flex direction, */
     align-items:flex-end;
+    /* 27D */
     /* changes the style flex perpendicular with the flex direction  */
     flex-wrap:wrap;
+    /* 27F */
     /* wraps the elements within the flex-wrapper (in the HTML) to wrap instead of squish  */
 }
 
 #Grid{
     display:grid;
+    /* 31D */
     grid-template-rows:50% 300px 1fr;
     /* fixes the rows to be  50% of it's parent div, then the second row to be 300px and the third to fill the rest of the space*/
     grid-template-columns: 3fr 1fr 50px;
     /* fixes the collumns to be 3/4 fractions of the parent div minus 50px from the third column, then 1/4 of the fractions minus the 50px, then it's 50px */
 }
 #variables{
+    /* 31C */
     background:var(--main-color)
     /* declared at :root{ --main-color:white} */
 }
 
 /* media Queries: */
 @media (min-width:100px){
+    /* 29C */
     p{
         color:red;
     }
@@ -141,9 +198,21 @@ p::before{}
 div::after{}
 /* will select a false element after the defined div tag */
 :hover{}
+/* 26H */
 /* will define the styling of the element when cursor is hovering */
 :link{}
 /* defines an unvisited link */
 :visited{}
 /* defines a visited link */
+div:nth-child{}
+/* will select the nth child of a certain element. 2nd child div>span>p etc. */
+/* 26L */
+input:focus{}
+/* will select a style of an input field when selected. */
+/* 26G */
+input:disabled{}
+/* will select a style of and input filed when not selected.  *
+/* 26E */
+
+
 
