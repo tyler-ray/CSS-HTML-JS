@@ -1,0 +1,149 @@
+:root{
+    --main-color:white
+}
+
+#box-model{
+margin:5px;
+/* Spacing outside the bounding box */
+border:1px solid red;
+/* Borderbox /bounding box */
+padding:5px;
+/* spacing inside the bounding box */
+content:''
+/* content normally in HTML unless in pseudo selectors */
+}
+
+#Float-and-display{
+    float:none;
+    /* also can be left/right, makes it so the rest of the content will fill around it. */
+    display:inline;
+    /* inline is just like regular HTML layout*/
+    /* block and inline block make it so that the element no longer takes up the full width of the screen */
+    /* grid is awesome and allows grid functionalities for placement without pain */
+    /* flex is a way to make things within the element evenly spaced and similar to eachother.*/
+    /* none makes the element invisible */
+}
+
+#font-and-background{
+    font-family: 'Courier New', Courier, monospace;
+    /* Which font will be applied */
+    font-size: 200%;
+    /* size of font  */
+    color:red;
+    /* color of the font */
+    background-color:blue;
+    /* color of the background */
+    background-image:url('www.example.com/image.jpg');
+    /* image background */
+    background-position: center;
+    /* Position of the background image, conver is also common,*/
+    background-repeat: no-repeat;
+    /* if background will repeat or not. */
+}
+
+#position{
+    position: static;
+    /* static is the basic */
+    /* relative keeps the image in its place but allows it to move */
+    /* absolute does not keep its place on the page and allows it to move. */
+    /* fixed will keep its spot relative to the viewport */
+    /* sticky is a mixtyre of fixed and static. based on input will act static unitl a cetain spot, then change to fixed, then back to static based on the position of the scroll box */
+}
+
+/* Selectors: */
+p{}
+div{}
+h1{}
+h3{}
+span{}
+main{}
+body{}
+*{}
+.classes{}
+#ids{}
+/* selectors are defined in HTML as tags, classes or IDs to become selectors in CSS */
+
+@keyframes selector{
+    from{
+        /* starting point / style */
+    }
+    to{
+        /* finishing poitn / style */
+    }
+}
+@keyframes selector{
+0%{
+    /* styling */
+}
+25%{
+    /* styling */
+}
+50%{
+    /* styling */
+}
+75%{
+    /* styling */
+}
+100%{
+    /* styling */
+}
+/* defines points in the animation */
+}
+
+#fancy-effects{
+    box-shadow:3px 2px 5px;
+    /* adds a shadow on the box based on the input */
+    background-image:linear-gradient(direction, starting-color, ending-color);
+    /* linear-gradient/radial-gradient overlays a gradient over the image */
+    overflow:hidden;
+    /* hides extra content that does not fit inside the given element usually div or span */
+    word-wrap: break-word
+    /* breaks words that are too long can also be keep-all will break at predefined hyphens, or break-all will break at any character */   
+}
+
+#flex-wrapper{
+    display:flex;
+    /* changes display for flexbox to work */
+    flex-direction:row;
+    /* changes between row and column. default is row */
+    justify-content: center;
+    /* changes the style of flex inline with the flex direction, */
+    align-items:flex-end;
+    /* changes the style flex perpendicular with the flex direction  */
+    flex-wrap:wrap;
+    /* wraps the elements within the flex-wrapper (in the HTML) to wrap instead of squish  */
+}
+
+#Grid{
+    display:grid;
+    grid-template-rows:50% 300px 1fr;
+    /* fixes the rows to be  50% of it's parent div, then the second row to be 300px and the third to fill the rest of the space*/
+    grid-template-columns: 3fr 1fr 50px;
+    /* fixes the collumns to be 3/4 fractions of the parent div minus 50px from the third column, then 1/4 of the fractions minus the 50px, then it's 50px */
+}
+#variables{
+    background:var(--main-color)
+    /* declared at :root{ --main-color:white} */
+}
+
+/* media Queries: */
+@media (min-width:100px){
+    p{
+        color:red;
+    }
+    /* will change the defined element (p) once the page width becomes bigger than 100px  we can also use things like min-height, max-width, max-height etc.*/
+    /* the basics are that it changes with the size of the screen */
+}
+
+/* pseudo selectors */
+p::before{}
+/* will select a false element before the defined p tag*/
+div::after{}
+/* will select a false element after the defined div tag */
+:hover{}
+/* will define the styling of the element when cursor is hovering */
+:link{}
+/* defines an unvisited link */
+:visited{}
+/* defines a visited link */
+
