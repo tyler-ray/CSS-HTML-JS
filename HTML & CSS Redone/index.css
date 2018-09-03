@@ -260,7 +260,7 @@ div > section{
 .mediaQueries{
     height:500px;
     width:90%;
-    border:15px solid red;
+    border:1px solid red;
 }
 
 .firstd{
@@ -306,11 +306,11 @@ a{
 
 }
 :focus{
-    font-size: 200%;
+    border:1px solid red;
     /* 26G */
 }
 :hover{
-    font-size:110%;
+    border:none;
     /* 26H */
 }
 :nth-child(10){
